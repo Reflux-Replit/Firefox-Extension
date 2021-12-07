@@ -1,0 +1,35 @@
+{
+	"manifest_version": 2,
+	"name": "Reflux",
+	"version": "1.0",
+
+	"description": "Applies Reflux themes to Replit.",
+
+	"icons": {
+		"48": "icons/icon48.png",
+		"96": "icons/icon96.png"
+	},
+
+	"permissions": [
+		"storage",
+		"webNavigation",
+		"*://*.replit.com/*"
+	],
+
+	"browser_action": {
+		"default_icon": "icons/icon32.png",
+		"default_title": "Reflux",
+		"default_popup": "popup/popup.html"
+	},
+
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "*://*.replit.com/*" ],
+			"js": [ "inject.js" ]
+		}
+	]
+}
