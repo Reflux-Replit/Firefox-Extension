@@ -1,0 +1,177 @@
+@keyframes load {
+	0%, 100% { content: "|"; }
+	25% { content: "/"; }
+	50% { content: "-"; }
+	75% { content: "\\"; }
+}
+
+* {
+	transition: 500ms;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	color: white;
+}
+
+button {
+	fill: #ccc;
+	color: #ccc;
+}
+
+input {
+	background: #24283b;
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+}
+
+body {
+	width: 400px;
+	height: 300px;
+	margin: 0px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
+	font-family: "Trebuchet MS";
+	background: #24283b;
+}
+
+header {
+	padding: 7px;
+	padding-top: 12px;
+
+	display: flex;
+	justify-content: space-between;
+
+	background: #414868;
+}
+
+header > div {
+	display: flex;
+}
+
+header button {
+	padding: 0px;
+	border: none;
+
+	fill: #ccc;
+
+	cursor: pointer;
+}
+
+header button:hover > svg {
+	fill: white;
+}
+
+header svg {
+	margin-left: 4px;
+}
+
+main {
+	padding: 10px;
+	flex-grow: 1;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+h1 {
+	margin: 0px;
+
+	font-size: 20px;
+}
+
+h2 {
+	font-size: medium;
+}
+
+button {
+	padding: 2px;
+	border: none;
+	border-radius: 2px;
+
+	background: transparent;
+
+	cursor: pointer;
+}
+
+button:hover {
+	color: white;
+}
+
+p.loading::after {
+	content: "|";
+
+	margin-left: 1ch;
+
+	animation: load 500ms infinite;
+}
+
+div.card {
+	width: calc(100% - 8px);
+	padding: 4px;
+	border-radius: 4px;
+	margin-bottom: 7px;
+	box-shadow: black 2px 2px 2px 2px;
+}
+
+div.card:hover {
+	box-shadow: none;
+	cursor: pointer;
+}
+
+div.list {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+div.modal {
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	background: #414868;
+}
+
+div.modal > div {
+	width: calc(100% - 40px);
+	padding: 4px;
+	border-radius: 4px;
+
+	background: #414868;
+}
+
+div.modal h2 {
+	margin: 0px;
+}
+
+div.modal p {
+	margin-top: 0px;
+}
+
+div.modal-action {
+	width: 100%;
+
+	display: flex;
+	justify-content: flex-end;
+}
+
+div.modal-action > * {
+	margin-left: 4px;
+}
+
+.hidden {
+	display: none !important;
+}
